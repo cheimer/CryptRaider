@@ -13,16 +13,24 @@ class CRYPTRAIDER_API UMover : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
 	UMover();
 
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+protected:
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, Category = "Mover")
+	bool IsMove = false;
+
+	UPROPERTY(EditAnywhere, Category = "Mover")
+	float MoveTime = 4.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Mover")
+	FVector MoveOffset = FVector::Zero();
+
+private:
+	FVector OriginLocation;
+
+	float MoveSpeed;
 };
