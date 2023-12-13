@@ -25,7 +25,6 @@ void UMover::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponent
 
 	if (IsMove)
 	{
-
 		GetOwner()->SetActorLocation(FMath::VInterpConstantTo(GetOwner()->GetActorLocation(), OriginLocation + MoveOffset, DeltaTime, MoveSpeed));
 	}
 
